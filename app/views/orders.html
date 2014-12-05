@@ -1,0 +1,24 @@
+<h2>{{ customer.campaing }}'s photos</h2>
+<br />
+<table class="table table-striped">
+    <tr>
+        <th>Campaign</th>
+        <th>Site</th>
+        <th>Location</th>
+        <th>Media Type</th>
+        <th>Assigned To</th>
+        <th>Due Date</th>
+        <th>Status</th>
+        <th>Photo</th>
+    </tr>
+    <tr ng-repeat="order in customer.orders" class="repeat-animation">
+        <td>{{ order.campaing }}</td>
+        <td>{{ order.site }}</td>
+        <td>{{ order.location }}</td>
+        <td>{{ order.product }}</td>
+        <td>{{ order.assignedto }}</td>
+        <td>{{ order.duedate }}</td>
+        <td>{{ order.status }}</td>
+        <td><a href=""> view</a></td>
+    </tr>
+</table>

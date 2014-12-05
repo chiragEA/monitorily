@@ -1,0 +1,25 @@
+<h2>Campaing List</h2>
+<br />
+Filter: <input type="text" ng-model="customerFilter.name" />
+<br /><br />
+
+<table class="table table-striped">
+    <tr>
+        <th ng-click="doSort('campaing')">Campaign</th>
+        <th ng-click="doSort('site')">Site</th>
+        <th ng-click="doSort('orderTotal')">Media Type</th>
+        <th ng-click="doSort('joined')">Due Date</th>
+        <th>Orders</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr ng-repeat="cust in customers | filter:customerFilter | orderBy:sortBy:reverse" class="repeat-animation">
+        <td>{{ cust.campaing }}</td>
+        <td>{{ cust.site }}</td>
+        <td>BillBoard</td>
+        <td>{{ cust.joined | date }}</td>
+        <td><a href="#/orders/{{ cust.id }}">Report Details</a></td>
+        <td class="center"><span class="glyphicon glyphicon-remove delete" ng-click="deleteCustomer(cust.id)"></span></td>
+    </tr>
+</table>
+<br /><br />
+<footer>Version: {{ appSettings.version }} </footer>
